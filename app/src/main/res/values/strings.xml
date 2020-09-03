@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">GADS Leaderboard</string>
+    <string name="title_activity_leader_board">LeaderBoard</string>
+    <string name="learning">Learning Leaders</string>
+    <string name="skill">Skill IQ Leaders</string>
+    <string name="submit">Submit</string>
+    <string name="google_africa"><b>Google</b> Africa \nDeveloper Scholarship</string>
+    <string name="project_submission">Project Submission</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="project_on_github_link">Project on GITHUB (Link)</string>
+    <string name="subForm">Submit Form</string>
 </resources>
