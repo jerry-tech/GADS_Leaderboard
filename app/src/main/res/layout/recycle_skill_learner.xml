@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_marginBottom="10dp"
     android:layout_height="match_parent">
 
 
@@ -10,7 +11,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="5dp"
-        app:cardElevation="12dp"
+        app:cardElevation="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
         app:contentPadding="7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +31,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/skill"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -37,7 +40,6 @@
                 android:gravity="left"
                 android:textSize="16sp"
                 android:padding="10dp"
-                android:text="Udoh Jeremiah"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -49,7 +51,6 @@
                 android:id="@+id/text_skill"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="300 skill IQ Score, Egypt"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:textSize="16sp"

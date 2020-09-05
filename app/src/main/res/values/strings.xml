@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GADS Leaderboard</string>
+    <string name="app_name">Leaderboard</string>
     <string name="title_activity_leader_board">LeaderBoard</string>
     <string name="learning">Learning Leaders</string>
     <string name="skill">Skill IQ Leaders</string>
@@ -11,4 +11,10 @@
     <string name="email_address">Email Address</string>
     <string name="project_on_github_link">Project on GITHUB (Link)</string>
     <string name="subForm">Submit Form</string>
+    <string name="submission_successful">Submission Successful</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="are_you_sure"><b>Are you sure <b>?</b></b></string>
+    <string name="yes">Yes</string>
+    <string name="submission_not_successful">Submission not successful</string>
 </resources>

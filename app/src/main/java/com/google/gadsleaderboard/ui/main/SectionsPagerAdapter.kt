@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.google.gadsleaderboard.R
+import com.google.gadsleaderboard.Skilliq
+import com.google.gadsleaderboard.Toplearners
 
 private val TAB_TITLES = arrayOf(
     R.string.learning,
@@ -21,7 +23,19 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     override fun getItem(position: Int): Fragment {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1)
+//        return PlaceholderFragment.newInstance(position + 1)
+
+        when (position) {
+            0 -> {
+                return Toplearners()
+            }
+            1 -> {
+                return Skilliq()
+            }
+            else -> {
+                return Toplearners()
+            }
+        }
     }
 
     override fun getPageTitle(position: Int): CharSequence? {

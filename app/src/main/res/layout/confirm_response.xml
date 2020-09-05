@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_button"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/dialogCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:drawableRightCompat="@drawable/ic_baseline_cancel_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.959"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dialog_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/are_you_sure"
+            android:textSize="30sp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/dialogCancel"
+            app:layout_constraintStart_toStartOf="@+id/dialogCancel"
+            app:layout_constraintTop_toBottomOf="@+id/dialogCancel" />
+
+        <Button
+            android:id="@+id/yesProject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes"
+            android:textSize="20sp"
+            android:layout_marginTop="60dp"
+            android:paddingStart="60dp"
+            android:textColor="@color/secBackground"
+            android:background="@drawable/rounded_border"
+            android:paddingEnd="60dp"
+            app:layout_constraintEnd_toEndOf="@+id/dialog_confirm"
+            app:layout_constraintStart_toStartOf="@+id/dialog_confirm"
+            app:layout_constraintTop_toBottomOf="@id/dialog_confirm" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
