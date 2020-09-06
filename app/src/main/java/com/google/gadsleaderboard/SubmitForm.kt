@@ -8,7 +8,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gadsleaderboard.Services.ProjectBuilder
 import com.google.gadsleaderboard.Services.ProjectService
-import com.google.gadsleaderboard.models.ProjectModel
 import kotlinx.android.synthetic.main.activity_submit_form.*
 import kotlinx.android.synthetic.main.confirm_response.view.*
 import kotlinx.android.synthetic.main.content_submit_form.*
@@ -88,6 +87,9 @@ class SubmitForm : AppCompatActivity() {
                     //error response
                     Log.i("Retrofierror", t.message.toString())
                     createDialog(R.layout.error_response, true)
+
+                    //resetting form
+                    resetForm();
                 }
 
                 override fun onResponse(
@@ -97,6 +99,8 @@ class SubmitForm : AppCompatActivity() {
                     //for successful response
                     if (response.isSuccessful) {
                         createDialog(R.layout.success_response, true)
+                        //resetting form
+                        resetForm();
                     } else {
                         createDialog(R.layout.error_response, true)
                     }
@@ -121,5 +125,11 @@ class SubmitForm : AppCompatActivity() {
         val mAlertDialog = mBuilder.show()
         mAlertDialog.setCancelable(cancel);
 
+    }
+    private fun resetForm(){
+       subFirstName.text.clear()
+       subLastName.text.clear()
+       subEmailAddress.text.clear()
+       subProject.text.clear()
     }
 }

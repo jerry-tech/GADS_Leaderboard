@@ -1,6 +1,5 @@
 package com.google.gadsleaderboard.Services
 
-import com.google.gadsleaderboard.models.ProjectModel
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
