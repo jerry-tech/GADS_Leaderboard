@@ -2,6 +2,7 @@ package com.google.gadsleaderboard
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class SubmitForm : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_submit_form)
@@ -65,6 +67,7 @@ class SubmitForm : AppCompatActivity() {
 
     //function used to submit project
     private fun submitProject() {
+
         //getting the text from the textFields
         val firstName: String = subFirstName.text.toString()
         val lastName: String = subLastName.text.toString()
@@ -76,18 +79,20 @@ class SubmitForm : AppCompatActivity() {
             val projectService = ProjectBuilder.buildProject(ProjectService::class.java)
 
             //request call
-            val requestCall = projectService.submitProject(firstName, lastName, emailAdd, linkProj);
+            val requestCall = projectService.submitProject(emailAdd, firstName, lastName, linkProj)
 
             //making the network call using the enqueue function
-            requestCall.enqueue(object : Callback<ProjectModel> {
+            requestCall.enqueue(object : Callback<Void> {
                 //on failure
-                override fun onFailure(call: Call<ProjectModel>, t: Throwable) {
-
+                override fun onFailure(call: Call<Void>, t: Throwable) {
+                    //error response
+                    Log.i("Retrofierror", t.message.toString())
+                    createDialog(R.layout.error_response, true)
                 }
 
                 override fun onResponse(
-                    call: Call<ProjectModel>,
-                    response: Response<ProjectModel>
+                    call: Call<Void>,
+                    response: Response<Void>
                 ) {
                     //for successful response
                     if (response.isSuccessful) {

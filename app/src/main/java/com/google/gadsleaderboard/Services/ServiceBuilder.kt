@@ -1,6 +1,7 @@
 package com.google.gadsleaderboard.Services
 
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -9,8 +10,10 @@ object ServiceBuilder {
     //declaring URL
     private const val URL = "https://gadsapi.herokuapp.com/"
 
+    private val loggers = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
+
     //creating OKHttp client
-    private val okHttpClient = OkHttpClient.Builder()
+    private val okHttpClient = OkHttpClient.Builder().addInterceptor(loggers)
 
     //instantiating the retrofit builder
     private val builder = Retrofit.Builder().baseUrl(URL)
